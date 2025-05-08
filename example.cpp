@@ -1,4 +1,5 @@
 #include <chrono>
+#include <filesystem>
 #include <thread>
 #include <iostream>
 #include <format>
@@ -7,7 +8,7 @@
 
 
 int main() {
-    Logger logger("/tmp/a.0", "/tmp/b.0");
+    Logger logger(std::filesystem::temp_directory_path()/"a.0", std::filesystem::temp_directory_path()/"a.0");
     logger.start_server();
 
     // Simulate generating log messages.

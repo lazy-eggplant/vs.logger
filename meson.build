@@ -6,8 +6,6 @@ project(
   default_options: ['cpp_std=c++23'],
 )
 
-crow_dep = dependency('Crow')
-
 log_lib = library(
     'vs-log',
     [
